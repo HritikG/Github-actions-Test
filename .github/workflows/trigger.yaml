@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-central-workflow:
-    uses: HritikG/Github-actions/.github/workflows/fetchIssueDetails.yaml@main
+    uses: HritikG/Github-actions/.github/workflows/fetchIssueDetails.yaml@master
     with:
       issue_number: ${{ github.event.issue.number }}
       issue_title: ${{ github.event.issue.title }}
