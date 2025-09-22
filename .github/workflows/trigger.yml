@@ -1,0 +1,16 @@
+name: Trigger Issues to TestLink
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  call-central-workflow:
+    uses: https://github.com/HritikG/Github-actions/blob/master/.github/workflows/fetchIssueDetails.yaml
+    with:
+      issue_number: ${{ github.event.issue.number }}
+      issue_title: ${{ github.event.issue.title }}
+      issue_body: ${{ github.event.issue.body }}
+      issue_author: ${{ github.event.issue.user.login }}
+      folder_id: "138887"   # 👈 repo-specific folder
+    secrets: inherit
